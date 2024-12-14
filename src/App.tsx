@@ -10,11 +10,6 @@ export function App() {
       <BrowserRouter>
         <Router />
       </BrowserRouter>
-      {/* <Button />
-      <Button variant="primary" />
-      <Button variant="secondary" />
-      <Button variant="danger" />
-      <Button variant="success" /> */}
       <GlobalStyle />
     </ThemeProvider>
   );
