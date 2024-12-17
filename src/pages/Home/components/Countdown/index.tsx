@@ -32,7 +32,7 @@ export function Countdown() {
       interval = setInterval(() => {
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeTask.startDate
+          new Date(activeTask.startDate)
         );
         if (secondsDifference >= totalSeconds) {
           markCurrentTaskAsFinished();

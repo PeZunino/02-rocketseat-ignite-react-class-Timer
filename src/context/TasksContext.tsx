@@ -1,16 +1,21 @@
-import { createContext, ReactNode, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
+import { ITask, tasksReducer } from "../reducers/tasks/reducer";
+import {
+  addNewTaskAction,
+  interruptCurrentTaskAction,
+  markCurrentTaskAsFinishedAction,
+} from "../reducers/tasks/actions";
+import { differenceInSeconds } from "date-fns";
 
 interface CreateTaskData {
   description: string;
   minutesAmount: number;
-}
-interface ITask {
-  id: string;
-  description: string;
-  minuteAmount: number;
-  startDate: Date;
-  interruptedDate?: Date;
-  finishedDate?: Date;
 }
 
 interface TaskContextType {
@@ -31,26 +36,43 @@ interface TasksContextProviderProps {
 }
 
 export function TaskContextProvider({ children }: TasksContextProviderProps) {
-  const [tasks, setTasks] = useState<ITask[]>([]);
-  const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
-  const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
+  const [tasksState, dispatch] = useReducer(
+    tasksReducer,
+    {
+      tasks: [],
+      activeTaskId: null,
+    },
+    (initialState) => {
+      const storedStateAsJSON = localStorage.getItem("@time:task-state-1.0.0");
+      if (storedStateAsJSON) {
+        return JSON.parse(storedStateAsJSON);
+      }
+      return initialState;
+    }
+  );
 
+  const { tasks, activeTaskId } = tasksState;
   const activeTask = tasks.find((task) => task.id === activeTaskId);
+
+  const [amountSecondsPassed, setAmountSecondsPassed] = useState(() => {
+    if (activeTask) {
+      return differenceInSeconds(new Date(), new Date(activeTask.startDate));
+    }
+
+    return 0;
+  });
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(tasksState);
+    localStorage.setItem("@time:task-state-1.0.0", stateJSON);
+  }, [tasksState]);
 
   function setSecondsPassed(seconds: number) {
     setAmountSecondsPassed(seconds);
   }
 
   function markCurrentTaskAsFinished() {
-    setTasks((state) =>
-      state.map((task) => {
-        if (task.id === activeTaskId) {
-          return { ...task, finishedDate: new Date() };
-        } else {
-          return task;
-        }
-      })
-    );
+    dispatch(markCurrentTaskAsFinishedAction());
   }
 
   function createNewTask(data: CreateTaskData) {
@@ -62,24 +84,13 @@ export function TaskContextProvider({ children }: TasksContextProviderProps) {
       startDate: new Date(),
     };
 
-    setTasks((state) => [...state, newTask]);
+    dispatch(addNewTaskAction(newTask));
 
-    setActiveTaskId(id);
     setAmountSecondsPassed(0);
-    // reset();
   }
 
   function interruptCurrentTask() {
-    setTasks((state) =>
-      state.map((task) => {
-        if (task.id === activeTaskId) {
-          return { ...task, interruptedDate: new Date() };
-        } else {
-          return task;
-        }
-      })
-    );
-    setActiveTaskId(null);
+    dispatch(interruptCurrentTaskAction());
   }
 
   return (
