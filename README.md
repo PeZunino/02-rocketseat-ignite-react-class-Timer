@@ -22,8 +22,8 @@ It utilizes React hooks such as Context API, useEffect, and useReducer for state
 
 ## ⚙️ Features
 
-- **Pomodoro Timer**: Set a countdown timer for your activities.
-- **Task History**: Keep a record of all activities. 
+- **Timer**: Set a countdown timer for your activities.
+- **Task History**: Keep a record of all tasks. 
 - **Data Persistence**: Stores session history using localStorage.  
 
 ## 🛠️ Installation
