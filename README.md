@@ -1,4 +1,4 @@
-# Ignite Timer
+# Ignite-Timer
 
 ![Completed](https://img.shields.io/badge/status-completed-brightgreen)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -33,13 +33,13 @@ Additionally, it keeps a history of all completed tasks, enabling users to track
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/PeZunino/SPA-application.git
+git clone https://github.com/PeZunino/Ignite-Timer.git
 ```
 
 2. Navigate into the project directory:
 
 ```bash
-cd SPA-application
+cd Ignite-Timer
 ```
 
 3. Install dependencies:
