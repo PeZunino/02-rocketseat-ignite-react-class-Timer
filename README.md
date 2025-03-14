@@ -1,4 +1,4 @@
-# Ignite-Timer
+# Timer
 
 ![Completed](https://img.shields.io/badge/status-completed-brightgreen)
 
