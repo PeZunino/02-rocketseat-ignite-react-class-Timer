@@ -17,13 +17,14 @@
 
 A single-page application (SPA) for time tracking, inspired by the Pomodoro Technique. It allows users to set a countdown timer for their tasks.
 Additionally, it keeps a history of all completed tasks, enabling users to track their productivity over time.
+
 It utilizes React hooks such as Context API, useEffect, and useReducer for state management and side effects.
 
 ## ⚙️ Features
 
-**Pomodoro Timer**: Set a countdown timer for your activities.
-**Task History**: Keep a record of all activities. 
-**Data Persistence**: Stores session history using localStorage.  
+- **Pomodoro Timer**: Set a countdown timer for your activities.
+- **Task History**: Keep a record of all activities. 
+- **Data Persistence**: Stores session history using localStorage.  
 
 ## 🛠️ Installation
 
