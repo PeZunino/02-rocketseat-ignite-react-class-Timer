@@ -1,50 +1,73 @@
-# React + TypeScript + Vite
+# Timer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Completed](https://img.shields.io/badge/status-completed-brightgreen)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Zod](https://img.shields.io/badge/zod-%233068b7.svg?style=for-the-badge&logo=zod&logoColor=white)
 
-Currently, two official plugins are available:
+![2025-03-1320-47-44-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/02da6fe5-237b-46dc-860c-0929d2e860c6)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📜 Description
 
-## Expanding the ESLint configuration
+This project is a time tracking application inspired by the Pomodoro Technique. It allows users to set a countdown timer for their tasks.
+Additionally, it keeps a history of all completed tasks, enabling users to track their productivity over time.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ⚙️ Features
 
-- Configure the top-level `parserOptions` property like this:
+**Pomodoro Timer**: Set a countdown timer for your activities.
+**Task History**: Keep a record of all activities. 
+**Data Persistence**: Stores session history using localStorage.  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Installation
+
+### Prerequisites
+
+- **Node.js (version 16 or above)**
+- **npm (Node.js package manager)**
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/PeZunino/SPA-application.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Navigate into the project directory:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd SPA-application
 ```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Run the development server:
+
+```bash
+npm run dev
+```
+
+5. Open your browser and visit:
+
+```bash
+http://localhost:5173/
+```
+
+## 🤝 Contributing
+
+If you'd like to contribute to this project, follow these steps:
+
+1. Fork this repository.
+2. Create a branch for your changes.
+3. Make your changes and submit a pull request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
