@@ -38,31 +38,26 @@ It utilizes React hooks such as Context API, useEffect, and useReducer for state
 ```bash
 git clone https://github.com/PeZunino/Ignite-Timer.git
 ```
-
 2. Navigate into the project directory:
 
 ```bash
 cd Ignite-Timer
 ```
-
 3. Install dependencies:
 
 ```bash
 npm install
 ```
-
 4. Run the development server:
 
 ```bash
 npm run dev
 ```
-
 5. Open your browser and visit:
 
 ```bash
 http://localhost:5173/
 ```
-
 ## 🤝 Contributing
 
 If you'd like to contribute to this project, follow these steps:
