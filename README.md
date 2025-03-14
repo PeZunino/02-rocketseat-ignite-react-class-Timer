@@ -14,8 +14,9 @@
 
 ## 📜 Description
 
-This project is a time tracking application inspired by the Pomodoro Technique. It allows users to set a countdown timer for their tasks.
+A single-page application (SPA) for time tracking, inspired by the Pomodoro Technique. It allows users to set a countdown timer for their tasks.
 Additionally, it keeps a history of all completed tasks, enabling users to track their productivity over time.
+It utilizes React hooks such as Context API, useEffect, and useReducer for state management and side effects.
 
 ## ⚙️ Features
 
