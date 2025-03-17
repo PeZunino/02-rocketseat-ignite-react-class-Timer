@@ -37,12 +37,12 @@ It utilizes React hooks such as Context API, useEffect, and useReducer for state
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/PeZunino/rocketseat-ignite-react-02-class-Timer.git
+git clone https://github.com/PeZunino/02-rocketseat-ignite-react-class-Timer.git
 ```
 2. Navigate into the project directory:
 
 ```bash
-cd rocketseat-ignite-react-02-class-Timer
+cd 02-rocketseat-ignite-react-class-Timer
 ```
 3. Install dependencies:
 
